@@ -1,18 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BodyComponent } from './components/shared/body/body.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { ServicesComponent } from './services/services.component';
+import {HeaderService} from "./services/header.service";
+import { RecursosHumanosComponent } from './components/recursos-humanos/recursos-humanos.component';
+import { InformaticaComponent } from './components/informatica/informatica.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BodyComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    ServicesComponent,
+    RecursosHumanosComponent,
+    InformaticaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    HeaderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,37 @@
+<div class="sidebar-fixed position-fixed">
+  <a class="logo-wrapper waves-effect animated fadeIn">
+    <img src="assets/img/Tech.png" class="img-fluid" alt="">
+    <img src="assets/img/Techbits.png" class="img-fluid small-logo" alt="">
+  </a>
+  <hr>
+  <div class="list-group list-group-flush">
+    <a *ngFor="let link of links; let i = index" [routerLink]="link.linkRef"  routerLinkActive="active"
+       class="list-group-item list-group-item-action waves-effect">
+      <i class="{{link.icon}} mr-3"></i>{{link.nombre}}
+    </a>
+  </div>
+
+</div>
+<nav id="header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        (Nombre completo user) <i class="fas fa-user-astronaut"></i>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Cambiar contraseña</a>
+        <a class="dropdown-item" href="#">Cambiar email</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-power-off"></i> Salir
+        </a>
+      </div>
+    </li>
+  </ul>
+</nav>
