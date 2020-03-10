@@ -3,7 +3,13 @@
   --sombra: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 body{
-  background: #eee!important;
+  /*background: #eee!important;*/
+  background-color: #2196F3;
+  min-height: 1000px;
+  font-family: 'helvetica neue';
+  background: url(/assets/img/bg-pattern.png), #2196F3;
+  background: url(/assets/img/bg-pattern.png), -webkit-gradient(linear, right top, left top, from(#2196F3), to(#009688));
+  background: url(/assets/img/bg-pattern.png), linear-gradient(to left, #0C5783, #0C1A34)
 }
 #header{
   -webkit-box-shadow: var(--sombra);
