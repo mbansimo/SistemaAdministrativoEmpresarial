@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card border-primary text-center w-50 centerLogin">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <form method="post">
+        <div class="form-group ">
+          <input [(ngModel)]="usuario.username" type="text" class="form-control"
+                 name="username" id="username" placeholder="Username" autofocus required>
+        </div>
+        <div class="form-group ">
+          <input [(ngModel)]="usuario.password" type="text" class="form-control"
+                 name="password" id="password" placeholder=" Password" required>
+        </div>
+        <div class="form-group ">
+          <input (click)="login()" type="submit" class="btn btn-primary btn-block btn-sm" value="login">
+        </div>
+        <div>
+          <a href="">Favor de ingresar con tu username y password que se designo por el area de Informática</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+

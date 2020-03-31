@@ -10,3 +10,72 @@
     </ol>
   </nav>
 </div>
+
+<div class="container">
+  <div class="">
+    <button type="button" (click)="setHabilitar()" class="btn btn-primary my-3">{{ habilitar==true? 'Clear': 'Buscar'
+      }}
+    </button>
+
+    <div class="card">
+      <div class="card-header">
+        Folios:
+        <input type="text" class="form-control" name="numeroFolio" #numerofolio="">
+      </div>
+
+      <ul class="list-group" *ngIf="habilitar == true">
+        <!--<li class="list-group-item" *ngFor="let curso of listaCurso">{{ curso }}</li>-->
+        <div class="container">
+          <table class="table table-bordered table-striped" *ngIf="habilitar == true">
+            <thead>
+            <tr>
+              <th style="max-width: 10px">#</th>
+              <th style="max-width: 10px">clv_folio</th>
+              <th style="max-width: 10px">usuario_creador</th>
+              <th style="max-width: 10px">usuario_desigando</th>
+              <th style="max-width: 10px">fecha</th>
+              <th style="max-width: 10px">estatus</th>
+              <th style="max-width: 10px">descripcion</th>
+              <th style="max-width: 10px">archivo</th>
+              <th style="max-width: 10px">eliminar</th>
+              <th style="max-width: 10px">actualizar</th>
+              <th style="max-width: 10px">detener</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let informatica of informatica">
+              <td>{{ informatica.id_folio }}</td>
+              <td>{{ informatica.clv_folio}}</td>
+              <td>{{ informatica.id_usuario_creador}}</td>
+              <td>{{ informatica.id_usuario_desigando}}</td>
+              <td>{{ informatica.fecha_creacion}}</td>
+              <td>{{ informatica.estatus}}</td>
+              <td>{{ informatica.descripcion}}</td>
+              <td>{{ informatica.nomrearchivo}}</td>
+              <td>
+                <!--<button type="button" name="eliminar" (click)='delete(cliente)' class="btn btn-danger btn-sm">eliminar-->
+                <button type="button" name="eliminar" (click)='delete(cliente)' class="btn btn-danger btn-sm">eliminar
+                </button>
+              </td>
+              <td>
+                <!--<button type="button" name="eliminar" (click)='delete(cliente)' class="btn btn-danger btn-sm">eliminar-->
+                <button type="button" name="eliminar" (click)='delete(cliente)' class="btn btn-info btn-sm">actualizar
+                </button>
+              </td>
+              <td>
+                <!--<button type="button" name="eliminar" (click)='delete(cliente)' class="btn btn-danger btn-sm">eliminar-->
+                <button type="button" name="eliminar" (click)='delete(cliente)' class="btn btn-info btn-sm">detener
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+
+      </ul>
+    </div>
+
+  </div>
+</div>

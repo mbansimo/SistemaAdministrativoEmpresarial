@@ -257,3 +257,25 @@ input{
 .input-group-text-2 input[type="checkbox"] {
   margin-top: 0;
 }
+
+.centerLogin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+/*table{*/
+  /*table-layout: fixed;*/
+  /*width: 250px;*/
+
+/*}*/
+
+th, td {
+  border: 1px solid blue;
+  width: 100px;
+  word-wrap: break-word;
+  text-align: center;
+}

@@ -1,0 +1,61 @@
+<div class="container animated fadeIn fast bg-white shadowT w-75">
+  <nav aria-label="breadcrumb ">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a [routerLink]="['home']">
+          Home
+        </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Usuarios</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container animated fadeIn fast">
+  <div class="card border-info mb-3 w-100" >
+    <div class="card-header">Usuarios</div>
+    <div class="card-body text-info">
+      <h5 class="card-title">Listado de Usuarios</h5>
+      <div>
+        <button *ngIf="authService.hasRole('ROLE_ADMIN')" class="btn btn-rounded btn-primary" type="button" [routerLink]="['/usuarios/form']">Crear Usuario</button>
+      </div>
+      <div *ngIf="usuarios?.length == 0" class="alert alert-info">
+        ¡¡No hay Registros!!
+      </div>
+      <br>
+      <div class="container">
+
+        <table class="table table-bordered table-striped nth-child" *ngIf="usuarios?.length>0">
+          <thead>
+          <tr>
+            <th *ngIf="authService.hasRole('ROLE_ADMIN')">id</th>
+            <th>usuario</th>
+            <th *ngIf="authService.hasRole('ROLE_ADMIN')">password</th>
+            <th>estatus</th>
+            <th>idTipo</th>
+            <th *ngIf="authService.hasRole('ROLE_ADMIN')">Editar</th>
+            <th *ngIf="authService.hasRole('ROLE_ADMIN')">Eliminar</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <td *ngIf="authService.hasRole('ROLE_ADMIN')">{{usuario.idUsuario}}</td>
+            <td >{{usuario.cvl_usuario}}</td>
+            <td *ngIf="authService.hasRole('ROLE_ADMIN')">{{usuario.password}}</td>
+            <td>{{usuario.estatus}}</td>
+            <td>{{usuario.idTipo}}</td>
+            <td *ngIf="authService.hasRole('ROLE_ADMIN')">
+              <button type="button" name="button" [routerLink]="['/usuarios/form', usuario.idUsuario]" class="btn btn-info">editar</button>
+            </td>
+            <td *ngIf="authService.hasRole('ROLE_ADMIN')">
+              <button type="button" name="eliminar" (click)="delete(usuario)" class="btn btn-danger btn-sm">eliminar</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+

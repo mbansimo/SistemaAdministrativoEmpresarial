@@ -18,8 +18,34 @@ export class HeaderService {
     }, {
       nombre: 'Informatica',
       linkRef: 'informatica',
-      icon: 'fa fa-caret-square-o-right'
+      icon: 'fas fa-laptop-code'
+    }, {
+      nombre: 'Compras',
+      linkRef: 'compras',
+      icon: 'fas fa-cart-arrow-down'
+    }, {
+      nombre: 'Almacen',
+      linkRef: 'almacen',
+      icon: 'fas fa-boxes'
+    }, {
+      nombre: 'Ticket`s',
+      linkRef: 'tickets',
+      icon: 'fas fa-ticket-alt'
+    }, {
+      nombre: 'Ventas',
+      linkRef: 'ventas',
+      icon: 'fas fa-box-open'
+    }, {
+      nombre: 'Marketing',
+      linkRef: 'marketing',
+      icon: 'fas fa-file-video'
     }
+    // ,
+    // {
+    //   nombre: 'Usuarios',
+    //   linkRef: 'usuarios',
+    //   icon: 'fas fa-user-lock'
+    // }
   ];
 
 

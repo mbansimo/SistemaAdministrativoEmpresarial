@@ -1,0 +1,74 @@
+<div class="card bg-dark text-white w-75 container">
+  <div class="card-header bg-azul">{{titulo}}</div>
+  <div class="card-body">
+
+    <form #usuarioForm="ngForm">
+      <div class="form-group row">
+        <label for="cvl_usuario" class="col-form-label col-sm-2">Clave Usuario</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="usuario.cvl_usuario" name="cvl_usuario" required minlength="6" #cvl_usuario="ngModel">
+          <div class="alert alert-danger" *ngIf="cvl_usuario.invalid && (cvl_usuario.dirty || cvl_usuario.touched)">
+            <div *ngIf="cvl_usuario.errors.required">
+              Clave de usuario requerida
+            </div>
+            <div *ngIf="cvl_usuario.errors.minlength">
+              clave de usuario debe tener almenos 6 caracteres
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-form-label col-sm-2">Password</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]='usuario.password' name="password" required minlength="8" #password="ngModel">
+          <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors.required">
+              Password requerido
+            </div>
+            <div *ngIf="password.errors.minlength">
+              Password de usuario debe tener almenos 8 caracteres
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="estatus" class="col-form-label col-sm-2">estatus</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="usuario.estatus" name="estatus" required #estatus="ngModel">
+          <div class="alert alert-danger" *ngIf="estatus.invalid && (estatus.dirty || estatus.touched)">
+            <div *ngIf="estatus.errors.required">
+              Estatus requerido
+            </div>
+            <div *ngIf="estatus.errors.minlength">
+              clave de usuario debe tener almenos 6 caracteres
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="tipo" class="col-form-label col-sm-2">Id tipo</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="usuario.idTipo" name="tipo" required #idTipo="ngModel">
+          <div class="alert alert-danger" *ngIf="idTipo.invalid && (idTipo.dirty || idTipo.touched)">
+            <div *ngIf="idTipo.errors.required">
+              Requiere un tipo de usuario
+            </div>
+            <div *ngIf="idTipo.errors.minlength">
+              idTipo debe tener almenos 1 caracteres
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!usuario.idUsuario else elseBlock" [disabled]="!usuarioForm.form.valid">
+            Crear
+          </button>
+          <ng-template #elseBlock>
+            <button class="btn btn-primary" role="button" (click)='update()' [disabled]="!usuarioForm.form.valid">Editar</button>
+          </ng-template>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
